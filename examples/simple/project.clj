@@ -1,15 +1,16 @@
 (defproject simple "lein-git-inject/version"
 
   :dependencies [[org.clojure/clojure       "1.10.1"]
-                 [org.clojure/clojurescript "1.10.520"
+                 [org.clojure/clojurescript "1.10.597"
                   :exclusions [com.google.javascript/closure-compiler-unshaded
-                               org.clojure/google-closure-library]]
-                 [thheller/shadow-cljs      "2.8.69"]
+                               org.clojure/google-closure-library
+                               org.clojure/google-closure-library-third-party]]
+                 [thheller/shadow-cljs      "2.8.76"]
                  [reagent                   "0.9.0-rc2"]
                  [re-frame                  "0.11.0-rc2"]]
 
   :plugins      [[day8/lein-git-inject "0.0.2"]
-                 [lein-shadow          "0.1.6"]]
+                 [lein-shadow          "0.1.7"]]
 
   :middleware   [leiningen.git-inject/middleware]
 

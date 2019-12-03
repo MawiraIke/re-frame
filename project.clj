@@ -1,26 +1,27 @@
-(defproject re-frame "lein-git-inject/version"
-  :description  "A Clojurescript MVC-like Framework For Writing SPAs Using Reagent."
+(defproject     re-frame "lein-git-inject/version"
+  :description  "A ClojureScript MVC-like Framework For Writing SPAs Using Reagent."
   :url          "https://github.com/day8/re-frame.git"
   :license      {:name "MIT"}
 
   :dependencies [[org.clojure/clojure       "1.10.1"   :scope "provided"]
-                 [org.clojure/clojurescript "1.10.520" :scope "provided"
+                 [org.clojure/clojurescript "1.10.597" :scope "provided"
                   :exclusions [com.google.javascript/closure-compiler-unshaded
-                               org.clojure/google-closure-library]]
-                 [thheller/shadow-cljs      "2.8.69"   :scope "provided"]
+                               org.clojure/google-closure-library
+                               org.clojure/google-closure-library-third-party]]
+                 [thheller/shadow-cljs      "2.8.76"   :scope "provided"]
                  [reagent                   "0.9.0-rc3"]
                  [net.cgrand/macrovich      "0.2.1"]
                  [org.clojure/tools.logging "0.4.1"]]
 
   :plugins      [[day8/lein-git-inject "0.0.2"]
-                 [lein-shadow          "0.1.6"]]
+                 [lein-shadow          "0.1.7"]]
 
   :middleware   [leiningen.git-inject/middleware]
 
   :profiles {:debug {:debug true}
-             :dev   {:dependencies [[binaryage/devtools "0.9.10"]]
-                     :plugins      [[lein-ancient "0.6.15"]
-                                    [lein-shell   "0.5.0"]]}}
+             :dev   {:dependencies [[binaryage/devtools "0.9.11"]]
+                     :plugins      [[lein-ancient       "0.6.15"]
+                                    [lein-shell         "0.5.0"]]}}
 
   :clean-targets  [:target-path "run/compiled"]
 
